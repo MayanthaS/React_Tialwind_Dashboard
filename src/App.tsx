@@ -18,6 +18,10 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import Analytics from "./pages/Analytics/Analytics";
+import CRM from "./pages/CRM/Crm";  
+// import Project from "./pages/ProjectManagement/Project";
+import Stocks from "./pages/Stocks/Stocks";
 
 export default function App() {
   return (
@@ -28,6 +32,10 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/crm" element={<CRM/>} />
+            {/* <Route path="/Project " element={<Project/>} /> */}
+            <Route path="/stocks" element={<Stocks/>} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />

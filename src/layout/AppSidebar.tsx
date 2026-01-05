@@ -17,6 +17,10 @@ import {
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
+import React from "react";
+// import Analytics from "../pages/Analytics/Analytics";
+// This import was causing the error because Analytics component
+// should only be imported in your router configuration, not in the sidebar
 
 type NavItem = {
   name: string;
@@ -29,7 +33,13 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    subItems: [
+      { name: "Ecommerce", path: "/", pro: false },
+      { name: "Analytics", path: "/analytics", pro: false },
+      { name: "CRM", path: "/crm", pro: false },
+      // { name: "Project Management", path: "/project-management", pro: false },
+      { name: "Stocks", path: "/stocks", pro: false }
+    ],
   },
   {
     icon: <CalenderIcon />,
@@ -105,7 +115,6 @@ const AppSidebar: React.FC = () => {
   );
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-  // const isActive = (path: string) => location.pathname === path;
   const isActive = useCallback(
     (path: string) => location.pathname === path,
     [location.pathname]
