@@ -22,6 +22,7 @@ import Analytics from "./pages/Analytics/Analytics";
 import CRM from "./pages/CRM/Crm";  
 // import Project from "./pages/ProjectManagement/Project";
 import Stocks from "./pages/Stocks/Stocks";
+import Sass from "./pages/Sass/Sass";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/crm" element={<CRM/>} />
             {/* <Route path="/Project " element={<Project/>} /> */}
             <Route path="/stocks" element={<Stocks/>} />
+            <Route path="/sass" element={<Sass/>} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
